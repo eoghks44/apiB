@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1>메인 페이지 입니다.</h1>
+	<h1>메인 페이지 입니다. git test</h1>
 	<%
 	//Dbconn dbconn = new Dbconn();
     //System.out.println("Dbconn : " + dbconn);
