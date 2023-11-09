@@ -1,0 +1,208 @@
+function checkSelectAll()  {
+	  // 전체 체크박스
+	  const checkboxes 
+	    = document.querySelectorAll('input[name="SEL_Q4"]');
+	  // 선택된 체크박스
+	  const checked 
+	    = document.querySelectorAll('input[name="SEL_Q4"]:checked');
+	  console.log(checked);
+	  // selectDelAll 제거함수
+	  const selectDelAll 
+	    = document.querySelector('input[name="chk4all"]');
+	  
+	  if(checkboxes.length === checked.length-1)  {
+		  selectDelAll.checked = false;
+	    
+	  }else 
+		  {
+		  selectDelAll.checked = false;
+		  }
+	  
+
+	   	  
+}
+   
+	  function selectDelAll(selectDelAll)  {
+	
+		  const checkboxes 
+		  = document.getElementsByName('SEL_Q4');
+	   
+		  checkboxes.forEach((checkbox) => {
+		
+			  checkbox.checked = false;
+			   if(checkboxes.value==5)
+		    	{
+		    	  checkboxes.checked = false;
+		    	}
+			   else if(checkboxes.value < 5)
+				   {
+				   checkboxes.checked = false;
+				   }
+			  
+		  })
+		  
+		 
+	  }
+	  
+	  function questionDisabled1(checkbox , name)
+	  {
+		  const check_boxes = document.getElementsByName(name);
+	      for (const box of check_boxes) 
+	      {
+	    	  box.disabled = checkbox.checked;
+	        if (checkbox.checked) {
+	          box.checked = false;
+	          box.disabled = true; 
+	        }
+	       
+	      }
+	      
+	  }
+	
+	  var count =0;
+	  var maxCount =2;
+	  function CheckFiled(checkbox)
+	  {
+		 
+		  const checked = document.getElementById('SEL_Q5_1');
+		  if(checkbox.checked){
+			  	count +=1;
+			  }
+		  else{
+				count -=1 ; 
+		  }
+		  
+		  if (count>maxCount){
+			  alert("2개까지만 선택가능합니다. 변경시 체크사항을 풀어주세요");
+			 checkbox.checked = false;
+			  count -= 1;
+		  }
+		  
+		  
+		  
+	  }
+	  
+	  
+function toggleTextbox1(checkbox) {
+	  
+		  // 1. 텍스트 박스 element 찾기
+
+		  const textbox_elem = document.getElementById('SelText5_1');
+		  // 2-1. 체크박스 선택여부 체크
+
+		  // 2-2. 체크박스 선택여부에 따라 텍스트박스 활성화/비활성화
+
+		  textbox_elem.disabled = checkbox.checked ? false : true;  
+
+		  // 3. 텍스트박스 활성화/비활성화 여부에 따라
+		  // - 텍스트박스가 비활성화 된 경우 : 텍스트박스 초기화
+		  // - 텍스트박스가 활성화 된 경우 : 포커스 이동
+		  if(textbox_elem.disabled) {
+		    textbox_elem.value = null;
+		  }else {
+		    textbox_elem.focus();
+		  }
+		  const checked = document.getElementsByClassName('SEL_Q5_1');
+		  if(checkbox.checked)
+			  {
+			  count +=1;
+			  }else 
+			  {
+				  count -=1 ; 
+		  
+	
+		  }
+		  if (count>maxCount){
+			  alert("2개까지만 선택가능합니다. 변경시 체크사항을 풀어주세요");
+			 checkbox.checked = false;
+			  textbox_elem.value = null;
+			  textbox_elem.disabled = true;
+			  count -= 1;
+		  }
+		  
+
+}
+function toggleTextbox2(checkbox) {
+	  
+	  // 1. 텍스트 박스 element 찾기
+
+	  const textbox_elem = document.getElementById('SelText6_1');
+	  // 2-1. 체크박스 선택여부 체크
+
+	  // 2-2. 체크박스 선택여부에 따라 텍스트박스 활성화/비활성화
+
+	  textbox_elem.disabled = checkbox.checked ? false : true;  
+
+	  // 3. 텍스트박스 활성화/비활성화 여부에 따라
+	  // - 텍스트박스가 비활성화 된 경우 : 텍스트박스 초기화
+	  // - 텍스트박스가 활성화 된 경우 : 포커스 이동
+	  if(textbox_elem.disabled) {
+	    textbox_elem.value = null;
+	  }else {
+	    textbox_elem.focus();
+	  }
+	  const checked = document.getElementsByClassName('SEL_6_1');
+	  if(checkbox.checked)
+		  {
+		  count +=1;
+		  }else 
+		  {
+			  count -=1 ; 
+	  
+
+	  }
+	  if (count>maxCount){
+		  alert("2개까지만 선택가능합니다. 변경시 체크사항을 풀어주세요");
+		 checkbox.checked = false;
+		  textbox_elem.value = null;
+		  textbox_elem.disabled = true;
+		  count -= 1;
+	  }
+	  
+
+}
+
+/*function toggleTextbox2(element) {
+	  
+	
+	  // 1. 텍스트 박스 element 찾기
+      
+	  const textbox_elem = document.getElementById('SelText5_2');
+	  const checked = document.getElementById('SEL_Q5_2');
+	  const checkboxes = document.getElementsByClassName("chk5_2");
+	  checkboxes.forEach((cb) => {
+		    cb.checked = false;
+		  })
+		  textbox_elem.disabled = false;
+		  element.checked = true;
+		}
+
+
+	  textbox_elem.disabled = element.checked ? false : true;  
+
+	  // 3. 텍스트박스 활성화/비활성화 여부에 따라
+	  // - 텍스트박스가 비활성화 된 경우 : 텍스트박스 초기화
+	  // - 텍스트박스가 활성화 된 경우 : 포커스 이동
+	  if(textbox_elem.disabled) {
+		element.cheked = true;
+	    textbox_elem.text = null;
+	  }else {
+	    textbox_elem.focus();
+	  }*/
+	  
+
+
+function checkOnlyOne(element) {
+	 const textbox_elem = document.getElementById('SelText5_2');
+	  const checked = document.getElementsByClassName('SEL_Q5_2');
+
+
+	  textbox_elem.disabled = element.checked ? false : true;  
+	  const checkboxes = document.getElementsByName("chk5_2");
+	  
+	  checkboxes.forEach((cb) => {
+	    cb.checked = false;
+	  })
+	  textbox_elem.disabled = true;
+	  element.checked = true;
+	}
